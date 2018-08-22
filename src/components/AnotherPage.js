@@ -31,13 +31,13 @@ class AnotherPage extends Component {
   }
 
   render() {
-
+    const pageName = this.props.message && this.props.message.pageName;
     return (
       <div className="AnotherPage">
         <Header />
         <div className="container">
           <MessageBox className="col-sm-8 col-sm-offset-2">
-            <Message> {this.props.message && this.props.message.pageNo}</Message>
+            <Message> {pageName}</Message>
           </MessageBox>
         </div>
       </div>
@@ -54,7 +54,6 @@ function mapStateToProps(state) {
 }
 
 AnotherPage.propTypes = {
-  fetchTest: PropTypes.func.isRequired,
   test: PropTypes.shape({
     message: PropTypes.string,
   }),

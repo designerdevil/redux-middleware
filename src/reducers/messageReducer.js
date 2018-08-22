@@ -6,7 +6,7 @@ export default (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case SHOW_PAGE_MESSAGE:
       return Object.assign({}, state, {
-          'pageNo': action.payload
+          'pageName': action.payload
         });
     default:
       return state;

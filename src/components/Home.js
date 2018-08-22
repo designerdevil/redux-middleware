@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Header from './Header';
-import { fetchTest, showMessage } from '../actions';
+import { showMessage } from '../actions';
 
 const MessageBox = styled.div`
   margin: 0 auto;
@@ -27,19 +27,18 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchTest();
     this.props.showMessage('1');
   }
 
   render() {
-    const { abc } = this.props.test;
+    const pageName = this.props.message && this.props.message.pageName;
 
     return (
       <div className="Home">
         <Header />
         <div className="container">
           <MessageBox className="col-sm-8 col-sm-offset-2">
-            <Message>{this.props.message && this.props.message.pageNo}</Message>
+            <Message>{pageName}</Message>
           </MessageBox>
         </div>
       </div>
@@ -56,7 +55,6 @@ function mapStateToProps(state) {
 }
 
 Home.propTypes = {
-  fetchTest: PropTypes.func.isRequired,
   test: PropTypes.shape({
     message: PropTypes.string,
   }),
@@ -67,4 +65,4 @@ Home.defaultProps = {
   message: null
 };
 
-export default connect(mapStateToProps, { fetchTest, showMessage })(Home);
+export default connect(mapStateToProps, { showMessage })(Home);
