@@ -43,18 +43,12 @@ class AnotherPage extends Component {
 }
 
 function mapStateToProps(state) {
-  const { test, message } = state;
+  const { message } = state;
   return {
-    test,
     message
   };
 }
 
-AnotherPage.propTypes = {
-  test: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-};
 
 AnotherPage.defaultProps = {
   test: null,

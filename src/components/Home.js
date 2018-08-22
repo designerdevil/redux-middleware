@@ -44,21 +44,14 @@ class Home extends Component {
 }
 
 function mapStateToProps(state) {
-  const { test, message } = state;
+  const { message } = state;
   return {
-    test,
     message
   };
 }
 
-Home.propTypes = {
-  test: PropTypes.shape({
-    message: PropTypes.string,
-  }),
-};
 
 Home.defaultProps = {
-  test: null,
   message: null
 };
 
