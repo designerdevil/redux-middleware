@@ -22,9 +22,6 @@ const Message = styled.span`
 `;
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.showMessage('1');

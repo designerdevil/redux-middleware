@@ -8,12 +8,11 @@ import {SHOW_PAGE_MESSAGE} from './actions/types';
  * */
 
 const messageMiddleware = store => next => (action) => {
-    const state = store.getState();
     switch (action.type) {
         case SHOW_PAGE_MESSAGE: {
-            // const pageNumber = action.payload;
-            // const actualMsg = messages[`page${pageNumber}`];
-            // action.payload = actualMsg;
+            const pageNumber = action.payload;
+            const actualMsg = messages[`page${pageNumber}`];
+            action.payload = actualMsg;
 
             break;
         }
